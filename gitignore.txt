@@ -26,6 +26,7 @@ ExportedObj/
 *.opendb
 *.info
 *.meta
+*.dwlt
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -47,7 +48,7 @@ sysinfo.txt
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/Library/
+/Library
 /ProjectSettings/
 /Temp/
 
