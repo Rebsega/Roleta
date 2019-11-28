@@ -16,6 +16,7 @@ ExportedObj/
 *.sln
 *.suo
 *.tmp
+*.json
 *.user
 *.userprefs
 *.pidb
@@ -46,6 +47,8 @@ sysinfo.txt
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/Library/
+/ProjectSettings/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
