@@ -49,6 +49,7 @@ sysinfo.txt
 /[Mm]emoryCaptures/
 /Library/
 /ProjectSettings/
+/Temp/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
