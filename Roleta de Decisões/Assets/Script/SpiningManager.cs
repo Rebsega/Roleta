@@ -11,34 +11,34 @@ public class SpiningManager : MonoBehaviour {
 	private int finalAngle;
 
 	public Text winText;
+	//private HitBoc ht = new HitBoc();
 	public int section;
 	float totalAngle;
 	public string[] PrizeName;
+	public int volta=0;
 
-	// Use this for initialization
 	private void Start () {
 		isCoroutine = true;
 		totalAngle = 360 / section;
 	}
 
-	// Update is called once per frame
 	private void Update () {
 
 		if (Input.GetMouseButton (0) && isCoroutine) {
-			StartCoroutine (Spin ());
+			StartCoroutine (Spin());
 		}
 	}
 
 	private IEnumerator Spin(){
 
 		isCoroutine = false;
-		randVal = Random.Range (200, 300);
+		randVal = Random.Range(200, 300);//angles per round
 
-		timeInterval = 0.0001f*Time.deltaTime*2;
+		timeInterval = 0.01f*Time.deltaTime*2;
 
 		for (int i = 0; i < randVal; i++) {
 
-			transform.Rotate (0, 0, (totalAngle/2)); //Start Rotate 
+			transform.Rotate (0, 0, (totalAngle/3)); //Start Rotate by 30 degrees
 
 
 			//To slow Down Wheel
@@ -63,6 +63,7 @@ public class SpiningManager : MonoBehaviour {
 		finalAngle = Mathf.RoundToInt (transform.eulerAngles.z);//round off euler angle of wheel value
 
 		print (finalAngle);
+		//print (volta);
 
 		//Prize check
 		for (int i = 0; i < section; i++) {
@@ -73,5 +74,12 @@ public class SpiningManager : MonoBehaviour {
 
 	
 		isCoroutine = true;
-	}
+	}//Spin
+
+
+ 
+    /*void OnTriggerEnter2D(Collider2D collider)
+    {
+        GameObject.Destroy(collider.gameObject);
+    }*/
 }
