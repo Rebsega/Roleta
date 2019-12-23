@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class SpiningManager : MonoBehaviour {
 
@@ -10,9 +11,12 @@ public class SpiningManager : MonoBehaviour {
 	private bool isCoroutine;
 	private int finalAngle;
 
+	public GameObject painel;
+	public GameObject wheel;
 	public Text winText;
 	//private HitBoc ht = new HitBoc();
 	public int section;
+	public bool end;
 	float totalAngle;
 	public string[] PrizeName;
 	public int volta=0;
@@ -20,6 +24,8 @@ public class SpiningManager : MonoBehaviour {
 	private void Start () {
 		isCoroutine = true;
 		totalAngle = 360 / section;
+		painel.SetActive(false);
+		wheel.SetActive(true);
 	}
 
 	private void Update () {
@@ -34,11 +40,11 @@ public class SpiningManager : MonoBehaviour {
 		isCoroutine = false;
 		randVal = Random.Range(200, 300);//angles per round
 
-		timeInterval = 0.01f*Time.deltaTime*2;
+		timeInterval = 0.001f*Time.deltaTime;
 
 		for (int i = 0; i < randVal; i++) {
 
-			transform.Rotate (0, 0, (totalAngle/3)); //Start Rotate by 30 degrees
+			transform.Rotate (0, 0, (totalAngle/3)); //Start Rotate by 30 angles
 
 
 			//To slow Down Wheel
@@ -54,9 +60,18 @@ public class SpiningManager : MonoBehaviour {
 				timeInterval = 2.5f*Time.deltaTime;
 
 			yield return new WaitForSeconds (timeInterval);
+			//finish spinning
 
+
+			
 		}
-
+			this.end = true;
+			if(end)
+			{
+				Thread.Sleep(1000);
+				painel.SetActive(true);
+				wheel.SetActive(false);
+			}
 		if (Mathf.RoundToInt (transform.eulerAngles.z) % totalAngle != 0) //when the indicator stop between 2 numbers,it will add aditional step 
 			transform.Rotate (0, 0, totalAngle/2);
 		
@@ -77,9 +92,12 @@ public class SpiningManager : MonoBehaviour {
 	}//Spin
 
 
- 
-    /*void OnTriggerEnter2D(Collider2D collider)
-    {
-        GameObject.Destroy(collider.gameObject);
-    }*/
+
+
+	public void desactiveGO()
+	{
+		wheel.gameObject.SetActive(true);
+		painel.gameObject.SetActive(false);
+		volta=0;
+	}
 }
