@@ -1,0 +1,13 @@
+Manual de instruções - Roleta de Decisões
+
+-> Usuários de produtos Apple® podem ter problemas para utilização do software;
+
+-> Usuários de produtos Motorola® precisam, após clicar na versão para instalar, aguardar que esta operação acabe,
+   e após isso, selecionar a opção "instalar mesmo assim", visto que o serviço da empresa reconhece como suspeito 
+   o aplicativo (mesmo sem quaisquer ameaças);
+
+-> Usuários de produtos Samsung®, em alguns casos, ao iniciar o download, precisem ir nas configurações do aparelho,
+   e permitir downloads do Google Drive (quando isto acontece, o próprio celular encaminhará a pessoa até o dito local).
+
+-> Já para computadores, não há restrições no geral, é necessário o download completo da pasta disponibilizada, e após o
+   mesmo, executar o "Roleta de Decisoes.exe", arquivo executável, com a roleta.
