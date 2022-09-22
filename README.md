@@ -1,1 +1,1 @@
-Roleta
+Projeto de desenvolvimento, por meio da linguagem de programação C#, uma Roleta para realizar questões ao usuário, no tocante à temática do "Corpo desejado" englobando questões relacionadas à esta temática
